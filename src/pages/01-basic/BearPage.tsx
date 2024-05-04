@@ -1,6 +1,8 @@
 import { WhiteCard } from '../../components';
-
+import {useBearStore} from '../../stores';
 export const BearPage = () => {
+
+  const blackbears = useBearStore(state => state.blackBear);
   return (
     <>
       <h1>Contador de Osos</h1>
@@ -14,7 +16,7 @@ export const BearPage = () => {
 
           <div className="flex flex-col md:flex-row">
             <button> +1</button>
-            <span className="text-3xl mx-2 lg:mx-10"> 0 </span>
+            <span className="text-3xl mx-2 lg:mx-10"> {blackbears} </span>
             <button>-1</button>
           </div>
 
